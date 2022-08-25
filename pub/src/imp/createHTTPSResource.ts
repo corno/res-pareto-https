@@ -2,10 +2,7 @@
 import * as api from "api-pareto-https"
 import { call } from "./call"
 
-export function createHTTPSResource(
-    $: api.CreateHTTPSResource_Data,
-    $i: api.CreateHTTPSResource_Algorithms,
-): api.HTTPSResource {
+export const createHTTPSResource: api.CreateHTTPSResource = ($, $i) => {
     const settings = $
     const onError = $i.onError
     return {
