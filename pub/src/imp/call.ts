@@ -4,7 +4,7 @@ import * as pl from "pareto-core-lib"
 import * as api from "api-pareto-https"
 import * as pth from "path"
 
-export function call<T>(
+export function call(
     $: {
         hostname: string,
         path: api.Path,
