@@ -1,6 +1,6 @@
 import * as https from "https"
 import * as pa from "pareto-core-types"
-import * as pl from "pareto-core-lib"
+import * as pl from "pareto-core-internals"
 import * as api from "api-pareto-https"
 import * as pth from "path"
 
