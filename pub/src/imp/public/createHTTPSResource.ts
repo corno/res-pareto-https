@@ -1,8 +1,9 @@
 
 import * as api from "api-pareto-https"
-import { call } from "./call"
+import { call } from "../private/call"
+import { panic } from "../private/panic"
 
-export const createHTTPSResource: api.CreateHTTPSResource = ($, $i) => {
+export const createHTTPSResource: api.XCreateHTTPSResource = ($, $i) => {
     const settings = $
     const onError = $i.onError
     return {
@@ -34,7 +35,7 @@ export const createHTTPSResource: api.CreateHTTPSResource = ($, $i) => {
                     },
                     onError: ($) => {
                         if (consumer !== null) {
-                            throw new Error("ENCOUNTERED HTTPS ERROR AFTER DATA WAS RECEIVED")
+                            panic("ENCOUNTERED HTTPS ERROR AFTER DATA WAS RECEIVED")
                         }
                         onError($)
                         $i.onFailed()

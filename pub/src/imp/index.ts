@@ -1,1 +1,1 @@
-export { createHTTPSResource } from "./createHTTPSResource"
+export * from "./public/createHTTPSResource"

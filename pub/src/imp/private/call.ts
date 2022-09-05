@@ -7,11 +7,11 @@ import * as pth from "path"
 export function call(
     $: {
         hostname: string,
-        path: api.Path,
+        path: api.TPath,
     },
     $i: {
         onData: (data: string) => void,
-        onError: (e: api.HTTPSError) => void,
+        onError: (e: api.THTTPSError) => void,
         onEnd: () => void
     }
 ): pa.AsyncNonValue {
