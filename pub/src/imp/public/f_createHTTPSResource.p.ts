@@ -3,7 +3,7 @@ import * as api from "api-pareto-https"
 import { call } from "../private/call"
 import { panic } from "../private/panic"
 
-export const createHTTPSResource: api.XCreateHTTPSResource = ($, $i) => {
+export const f_createHTTPSResource: api.XCreateHTTPSResource = ($, $i) => {
     const settings = $
     const onError = $i.onError
     return {
