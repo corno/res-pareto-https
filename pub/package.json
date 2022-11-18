@@ -22,7 +22,7 @@
   },
   "version": "0.23.0",
   "devDependencies": {
-    "@types/node": "^18.7.23"
+    "@types/node": "^18.11.9"
   },
-  "content-fingerprint": "d1ab46be04ec80b95effcf3c6fd397b02b21e5db"
+  "content-fingerprint": "5609e9c710266d667ea1abd4dfc8475175c7d867"
 }
