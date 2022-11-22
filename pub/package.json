@@ -17,13 +17,12 @@
     "url": "git+https://github.com/corno/res-pareto-https.git"
   },
   "dependencies": {
-    "api-pareto-https": "^0.7.0",
-    "pareto-core": "^0.0.4",
     "pareto-core-internals": "^0.9.0"
   },
   "version": "0.23.0",
   "devDependencies": {
     "@types/node": "^18.11.9"
   },
-  "content-fingerprint": "1e798fb0341d8f55838a5c75527ac94ccbbb7dc0"
+  "interface-fingerprint": "d0a2a684b6278ef85fda39ab0505420493d91ace",
+  "content-fingerprint": "f166d334fd40fd79471ca31107fff34ebe51eef0"
 }

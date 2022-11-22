@@ -1,8 +1,10 @@
 import * as pt from "pareto-core-types"
+
+import * as api from "../../interface"
+
 import * as https from "https"
-import * as pa from "pareto-core-types"
 import * as pl from "pareto-core-internals"
-import * as api from "api-pareto-https"
+
 import * as pth from "path"
 
 export function call(
@@ -14,8 +16,7 @@ export function call(
         onData: (data: string) => void,
         onError: (e: api.THTTPSError) => void,
         onEnd: () => void
-    },
-    $a: pt.ProcessAsyncValue
+    }
 ): void {
     const options = {
         hostname: $.hostname,

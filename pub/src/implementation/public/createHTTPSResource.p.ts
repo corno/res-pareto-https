@@ -1,12 +1,13 @@
 
-import * as api from "api-pareto-https"
+import * as api from "../../interface"
+
 import { call } from "../private/call.p"
 import { panic } from "../private/panic.p"
 
 export const f_createHTTPSResource: api.FCreateHTTPSResource = ($, $i) => {
     const settings = $
     const onError = $i.onError
-    return ($, $i, $a) => {
+    return ($, $i) => {
 
         type StreamConsumer<DATA> = {
             onData: ($: DATA) => void;
@@ -39,9 +40,7 @@ export const f_createHTTPSResource: api.FCreateHTTPSResource = ($, $i) => {
                     onError($)
                     $i.onFailed()
                 },
-            },
-            $a,
-
+            }
         )
     }
 }
