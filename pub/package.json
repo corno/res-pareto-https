@@ -23,6 +23,6 @@
   "devDependencies": {
     "@types/node": "^18.11.9"
   },
-  "interface-fingerprint": "d0a2a684b6278ef85fda39ab0505420493d91ace",
-  "content-fingerprint": "f166d334fd40fd79471ca31107fff34ebe51eef0"
+  "interface-fingerprint": "69445319f6d625f88d2338196ab1820d946735d1",
+  "content-fingerprint": "e7001180eeccf10f4bc63197033be42d4ce8ad33"
 }
