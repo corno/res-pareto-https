@@ -11,18 +11,18 @@
   ],
   "license": "ISC",
   "main": "./dist",
-  "name": "res-pareto-https",
+  "name": "res-pareto-http",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/corno/res-pareto-https.git"
+    "url": "git+https://github.com/corno/res-pareto-http.git"
   },
   "dependencies": {
+    "glo-pareto-common": "^0.7.0",
     "pareto-core-internals": "^0.11.0"
   },
-  "version": "0.23.0",
+  "version": "0.12.0",
   "devDependencies": {
-    "@types/node": "^18.11.9"
+    "@types/node": "^18.11.18"
   },
-  "interface-fingerprint": "69445319f6d625f88d2338196ab1820d946735d1",
-  "content-fingerprint": "0fbc5c4ac5ef4dcb442624c766c912fa66fe55e2"
+  "content-fingerprint": "17cbd33bec0e8a9e19e26e9fde155b61cb4b32bc"
 }
