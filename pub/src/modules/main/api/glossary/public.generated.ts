@@ -1,13 +1,12 @@
 import * as pt from 'pareto-core-types'
+
+import * as t from './types.generated'
+
 import * as mcommon from "glo-pareto-common"
 
-export type TConfiguration = {
-    readonly 'contextPath': mcommon.TPath
-    readonly 'hostName': string
-}
+export type TConfiguration = t.UConfiguration
 
-export type THTTPSError = 
-    | ['unknown', string]
+export type THTTPSError = t.UHTTPSError
 
 export type IInit = () => IStreamConsumer
 
