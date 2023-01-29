@@ -1,28 +1,24 @@
 {
+  "name": "res-pareto-collation",
   "author": "Corno",
-  "bugs": {
-    "url": "https://github.com/corno/pareto/issues"
-  },
-  "description": "",
-  "homepage": "https://github.com/corno/pareto#readme",
-  "keywords": [],
-  "files": [
-    "dist"
-  ],
   "license": "ISC",
-  "main": "./dist",
-  "name": "res-pareto-https",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/corno/res-pareto-https.git"
-  },
+  "description": "a pareto wrapper around the HTTPS library of NodeJS",
   "dependencies": {
-    "glo-pareto-common": "^0.9.0",
+    "glo-pareto-common": "^0.10.0",
     "pareto-core-internals": "^0.11.0"
   },
-  "version": "0.26.0",
   "devDependencies": {
     "@types/node": "^18.11.18"
   },
-  "content-fingerprint": "d320e6b66a755cc7e9a68c7837407a66d9f6bbd9"
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/corno/res-pareto-collation.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "version": "0.0.0",
+  "content-fingerprint": "00bfdf77961129ed3e28a27b43eaf9ca0bb89966"
 }
