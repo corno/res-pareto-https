@@ -12,20 +12,18 @@ export const $: mproject.TProject = {
     'author': "Corno",
     'description': "a pareto wrapper around the HTTPS library of NodeJS",
     'license': "ISC",
-    'type': ['resource',  {
-        'devDependencies': d({
-            "@types/node": {},
-        }),
-    }],
-    'modules': d({
-        "main": {
-            'definition': api,
-
-        },
-    }),
-    'main': "main",
+    
     'pubdependencies': d({
         "glo-pareto-common": {},
     }),
-    'testdependencies': d({}),
+    'type': ['resource', {
+        'definition': api,
+        'devDependencies': d({
+            "@types/node": {},
+        }),
+        'test': {
+            'dependencies': d({
+            }),
+        }
+    }],
 }
