@@ -15,11 +15,11 @@ export const $$: api.CcreateHTTPSResourceProcessor = ($x, $d) => {
         function call(
             $: {
                 readonly "hostname": string,
-                readonly "path": mcommon.TPath,
+                readonly "path": mcommon.T.Path,
             },
             $i: {
                 onData: (data: string) => void,
-                onError: (e: api.THTTPSError) => void,
+                onError: (e: api.T.HTTPSError) => void,
                 onEnd: () => void
             }
         ): void {
