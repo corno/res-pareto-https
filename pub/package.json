@@ -2,23 +2,20 @@
   "author": "Corno",
   "license": "ISC",
   "description": "a pareto wrapper around the HTTPS library of NodeJS",
+
   "dependencies": {
-    "glo-pareto-common": "^0.12.0",
-    "pareto-core-internals": "^0.11.1"
+    "glo-pareto-common": "^0.0.0",
+    "pareto-core-internals": "^0.0.0"
   },
   "devDependencies": {
-    "@types/node": "^18.13.0"
+    "@types/node": "^0.0.0"
   },
   "files": [
     "dist"
   ],
   "repository": {
-    "type": "git",
-    "url": "http://github.com/corno/res-pareto-https.git"
+    "type": "git"
   },
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "name": "res-pareto-https",
-  "version": "0.28.0",
-  "content-fingerprint": "c759cae55e6a6a0b8e3ade331826f5dd39a69a91"
+  "types": "dist/index.d.ts"
 }
