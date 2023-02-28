@@ -1,14 +1,13 @@
 import * as pt from 'pareto-core-types'
 
-import * as gglo from "./glossary"
-
 import * as gcommon from "glo-pareto-common"
+import * as gthis from "./glossary"
 
-export type CcreateHTTPSResourceProcessor = ($: gglo.T.Configuration, $d: {
-    readonly 'onError': gglo.FHandleError
+export type CcreateHTTPSResourceProcessor = ($: gthis.T.Configuration, $d: {
+    readonly 'onError': gthis.FHandleError
     readonly 'onFailed': gcommon.FSignal
     readonly 'onNotExists': gcommon.FSignal
-}) => gglo.FProcessHTTPSResource
+}) => gthis.FProcessHTTPSResource
 
 export type API = {
     createHTTPSResourceProcessor: CcreateHTTPSResourceProcessor
