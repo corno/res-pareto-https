@@ -1,13 +1,13 @@
 import * as pi from 'pareto-core-internals'
 
-import * as gapi from "../api"
+import * as gapi from "../definition/glossary"
 import * as gcommon from "glo-pareto-common"
 
 import * as nhttps from "https"
 import * as npth from "path"
 
 
-import { CcreateHTTPSResourceProcessor } from "../api"
+import { CcreateHTTPSResourceProcessor } from "../definition/api.generated"
 
 export const $$:CcreateHTTPSResourceProcessor = ($x, $d) => {
     return ($, $c) => {
