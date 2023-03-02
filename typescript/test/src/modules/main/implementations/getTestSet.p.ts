@@ -12,7 +12,7 @@ import { CgetTestSet } from "../definition/api.generated"
 export const $$:CgetTestSet = () => {
     pv.logDebugMessage("START")
 
-    gpub.$a.createHTTPSResourceProcessor(
+    gpub.$r.createHTTPSResourceProcessor(
         {
             'hostName': "www.nu.nl",
             'contextPath': "",
