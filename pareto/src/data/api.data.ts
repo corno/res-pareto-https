@@ -6,10 +6,6 @@ import * as gapi from "lib-pareto-typescript-project/dist/submodules/api"
 const d = pd.d
 
 export const $: gapi.T.API<pd.SourceLocation> = {
-    'imports': d({
-        "common": "glo-pareto-common",
-        "this": "./glossary",
-    }),
     'algorithms': d({
         "createHTTPSResourceProcessor": algorithm(functionReference("this", {}, "ProcessHTTPSResource"), constructor(typeReference("this", {}, "Configuration"), {
             "onNotExists": functionReference("common", {}, "Signal"),
