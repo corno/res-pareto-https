@@ -3,16 +3,16 @@ import * as ps from 'pareto-core-state'
 import * as pv from 'pareto-core-dev'
 import * as pa from 'pareto-core-async'
 
-import * as gtest from "lib-pareto-test"
+import * as g_test from "lib-pareto-test"
 
-import * as gpub from "../../../../../pub"
+import * as g_pub from "../../../../../pub"
 
 import { CgetTestSet } from "../definition/api.generated"
 
 export const $$:CgetTestSet = () => {
     pv.logDebugMessage("START")
 
-    gpub.$r.createHTTPSResourceProcessor(
+    g_pub.$r.createHTTPSResourceProcessor(
         {
             'hostName': "www.nu.nl",
             'contextPath': "",
@@ -39,7 +39,7 @@ export const $$:CgetTestSet = () => {
             }
         }
     })
-    const builder = ps.createUnsafeDictionaryBuilder<gtest.T.TestElement>()
+    const builder = ps.createUnsafeDictionaryBuilder<g_test.T.TestElement>()
     function createTest(name: string, actual: string, expected: string) {
         builder.add(name, {
             'type': ['test', {
