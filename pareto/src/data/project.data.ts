@@ -54,13 +54,11 @@ export const $: g_project.T.Project<pd.SourceLocation> = {
                         },
                         'asynchronous': {
                             'interfaces': d({}),
-                            'constructors': d({}),
-                            'functions': d({}),
+                            'algorithms': d({}),
                         },
                         'synchronous': {
                             'interfaces': d({}),
-                            'constructors': d({}),
-                            'functions': d({}),
+                            'algorithms': d({}),
                         },
                     },
                     'imports': d({}),

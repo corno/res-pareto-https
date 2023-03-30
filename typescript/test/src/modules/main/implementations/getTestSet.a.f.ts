@@ -1,42 +1,42 @@
-
+import * as pl from 'pareto-core-lib'
 import * as ps from 'pareto-core-state'
 import * as pv from 'pareto-core-dev'
 import * as pa from 'pareto-core-async'
 
 import * as g_test from "lib-pareto-test"
 
-import * as g_pub from "../../../../../pub"
+import * as g_pub from "../../../../../pub/dist"
 
-import { CgetTestSet } from "../definition/api.generated"
+import { A } from "../api.generated"
 
-export const $$:CgetTestSet = () => {
+export const $$: A.getTestSet = () => {
     pv.logDebugMessage("START")
 
-    g_pub.$r.createHTTPSResourceProcessor(
+    g_pub.$r.httpsServer(
         {
             'hostName': "www.nu.nl",
             'contextPath': "",
         },
-        {
-            onError: () => {
-                pv.implementMe(`XSSDF`)
-            },
-            onFailed: () => {
-                pv.implementMe(`XSSDF`)
+    ).consume([], {
+        'data': ($) => {
+            switch ($[0]) {
+                case 'data':
+                    pl.cc($[1], ($) => {
 
-            },
-            onNotExists: () => {
-                pv.implementMe(`XSSDF`)
+                        pv.logDebugMessage($)
+                    })
+                    break
+                case 'error':
+                    pl.cc($[1], ($) => {
+                        pv.logDebugMessage("ERROR")
+                    })
+                    break
+                default: pl.au($[0])
             }
-        }
-    )([], () => {
-        return {
-            onData: ($) => {
-                pv.logDebugMessage($)
-            },
-            onEnd: () => {
-                pv.logDebugMessage("ENDED")
-            }
+
+        },
+        'end': () => {
+            pv.logDebugMessage("END")
         }
     })
     const builder = ps.createUnsafeDictionaryBuilder<g_test.T.TestElement>()

@@ -1,17 +1,8 @@
 import * as pd from 'pareto-core-data'
 
 import {
-    string, member, taggedUnion, group,
-    typeReference,
-    type,
-    externalTypeReference,
-    ref,
-    imp,
-    stream,
-    data,
-    inf,
-    aInterfaceReference,
-    aInterfaceMethod,
+    aInterface, aInterfaceMethod, aInterfaceReference, boolean, externalTypeReference,
+    group, imp, member, ref, resource, streamconsumer, string, taggedUnion, type, typeReference
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -30,46 +21,52 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
                 "hostName": member(string()),
                 "contextPath": member(ref(externalTypeReference("common", "Path"))),
             })),
-            "HTTPError": type(taggedUnion({
+            "HTTPSError": type(taggedUnion({
                 "unknown": string(),
             })),
+            "EncounteredErrors": type(boolean()),
+            "Data": type(taggedUnion({
+                "error": ref(typeReference("HTTPSError")),
+                "data": string()
+            }))
         }),
     },
     'asynchronous': {
         'interfaces': d({
-
-            //"HandleError": interfaceMethod(typeReference("HTTPError")),
-            // "ProcessHTTPResource": func(typeReference("common", "Path"), null, builderReference("Init"), null),
-
-            "Init": ['choice', {
-                'options': d({
-                    "success": ['reference', aInterfaceReference("StreamConsumer")],
-                    "error": ['reference', aInterfaceReference("ErrorStreamConsumer")],
-                })
-            }],
+            //"HandleError": interfaceMethod(typeReference("HTTPSError")),
+            // "ProcessHTTPSResource": func(typeReference("common", "Path"), null, builderReference("Init"), null),
+            //"Init": aInterface(aInterfaceMethod(null, ['reference', aInterfaceReference("StreamConsumer")])),
+            // "Init": ['choice', {
+            //     'options': d({
+            //         "success": ['reference', aInterfaceReference("StreamConsumer")],
+            //         "error": ['reference', aInterfaceReference("ErrorStreamConsumer")],
+            //     })
+            // }],
             // "Init": builderMethod(null, ['reference', {
             //     'context': ['local', null],
             //     'interface': "StreamConsumer"
             // }], false),
-            "StreamConsumer": stream(
-                aInterfaceMethod(externalTypeReference("common", "String")),
+            // "StreamConsumer": aInterface(streamconsumer(
+            //     aInterfaceMethod(externalTypeReference("common", "String")),
+            //     aInterfaceMethod(typeReference("EncounteredErrors")),
+            // )),
+            "Consumer": aInterface(streamconsumer(
+                aInterfaceMethod(typeReference("Data")),
                 aInterfaceMethod(null),
-            ),
-            "ErrorStreamConsumer": stream(
-                aInterfaceMethod(typeReference("HTTPError")),
-                aInterfaceMethod(null),
-            ),
+            )),
         }),
-        'constructors': d({}),
-        'functions': d({
+        'algorithms': d({
+            "HTTPSServer": resource(externalTypeReference("common", "Path"), aInterfaceReference("Consumer"))
+            // "HTTPSRequest": a(, {
+            //     "init": aInterfaceReference("Init"),
+            //     "errorConsumer": aInterfaceReference("ErrorStreamConsumer")
+            // })
 
-            //"HTTP": afunc(data(externalTypeReference("common", "Path")), inf(interfaceReference("Init")))
         }),
     },
     'synchronous': {
         'interfaces': d({}),
-        'constructors': d({}),
-        'functions': d({}),
+        'algorithms': d({}),
     },
 
 }
