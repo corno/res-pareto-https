@@ -12,10 +12,16 @@ export const $$: A.httpsServer = ($x) => {
         'consume': ($, $is) => {
             let ended = false
 
+
+            let concatenatedPath = ""
+            $.__forEach(($) => {
+                n_path.join(concatenatedPath, $)
+            })
+
             const options = {
                 hostname: $x.hostName,
                 //port: 443,
-                path: n_path.join(...pi.xflatten($)),
+                path: concatenatedPath,
                 method: 'GET'
             }
 
